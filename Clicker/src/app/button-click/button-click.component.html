@@ -1,5 +1,6 @@
 <app-btn-show-all-results></app-btn-show-all-results>
 <app-btn-save-delete-account [username]="username"></app-btn-save-delete-account>
+<!-- app-usergreeting is redundant -->
 <app-usergreeting [username]="username" *ngIf="!count"></app-usergreeting>
 <app-timer (timerGo)="onTimer($event)" *ngIf="!count"></app-timer>
 

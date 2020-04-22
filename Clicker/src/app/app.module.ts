@@ -14,7 +14,7 @@ import { BtnShowAllResultsComponent } from './btn-show-all-results/btn-show-all-
   declarations: [
     AppComponent,
     UsernameComponent,
-    UsergreetingComponent,
+    UsergreetingComponent,//UserGreetingComponent
     ButtonClickComponent,
     TimerComponent,
     ResultsTableComponent,

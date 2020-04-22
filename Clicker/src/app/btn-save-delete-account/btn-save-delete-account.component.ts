@@ -28,7 +28,7 @@ export class BtnSaveDeleteAccountComponent implements OnInit {
     this.userExist = true;
   }
 
-  deleteLocalStorage(): void {
+  deleteLocalStorage(): void {// delete local storage?) hmmm=) removeUser or logout would be better
     localStorage.removeItem('userName');
     localStorage.removeItem('userResults');
     this.userExist = false;

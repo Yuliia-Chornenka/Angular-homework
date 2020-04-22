@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Result} from '../result';
+import { Result } from '../result';
 
 @Component({
   selector: 'app-btn-show-all-results',

@@ -23,12 +23,14 @@ export class ButtonClickComponent implements OnInit, DoCheck {
 
 
   ngDoCheck(): void {
+    // just look at the console. this method must be moved to ngOnInit. Avoid usage ngDoCheck
+    console.log('ButtonClickComponent ngDoCheck');
     this.localStorageGetName();
   }
 
-  onTimer(timer): void {
-  this.timerGo = timer;
-  this.seconds = timer;
+  onTimer(timer: number): void {
+    this.timerGo = timer;
+    this.seconds = timer;
   }
 
   increase(): void {
@@ -55,36 +57,36 @@ export class ButtonClickComponent implements OnInit, DoCheck {
     }
   }
 
-  tryAgain(): void {
+  tryAgain(): void {// restartGame() ?
     this.timerGo = 10;
     this.seconds = 10;
     this.count = 0;
   }
 
-  localStorageGetName(): void {
+  localStorageGetName(): void {// isUserExist()
     if (localStorage.userName) {
       this.userExist = true;
     }
   }
 
-  setResultsLocalStorage(): void {
+  setResultsLocalStorage(): void {// the same, can be moved to service
     const resultExist = localStorage.getItem('userResults');
     if (resultExist) {
       const savedResults: Result[] = JSON.parse(localStorage.getItem('userResults'));
       const newResults = this.results;
 
-      newResults.forEach((item) => {
-      savedResults.forEach((elementRes) => {
-          if (item.id !== elementRes.id) {
+      newResults.forEach((item: Result) => {
+        savedResults.forEach((elementRes: Result) => {
+          if (item.id !== elementRes.id) { // is id unique? can we use find instead nested forEach?
             savedResults.push(item);
           }
         });
       });
 
-      const tmpArray = [];
-      const resultsToSave = savedResults.filter((item) => {
+      const tmpArray = []; // rename to more logical name, uniqueIds?
+      const resultsToSave = savedResults.filter((item: Result) => { // looks like we can use .find instead .filter
         if (tmpArray.indexOf(item.id) === -1) {
-          tmpArray.push(item.id);
+          tmpArray.push(item.id); // avoid side effects in .filter.
           return true;
         }
         return false;
