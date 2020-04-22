@@ -15,11 +15,15 @@ export class UsernameComponent implements OnInit {
     this.localStorageGetName();
   }
 
-  getUserName(name): void {
-    this.username = name;
+  getUserName(name: string): void {
+    if (!name.trim()) {
+      alert(' name is required');
+      return;
+    }
+    this.username = name.trim();
   }
 
-  localStorageGetName(): void {
+  localStorageGetName(): void {// 'getName' would be enough, and  would be better move this logic to service
     if (window.localStorage.userName) {
       this.username = localStorage.getItem('userName');
     }

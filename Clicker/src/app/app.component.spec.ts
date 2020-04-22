@@ -11,7 +11,7 @@ describe('AppComponent', () => {
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(AppComponent);// move 14 and 15 lines to beforeEach, and below
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });

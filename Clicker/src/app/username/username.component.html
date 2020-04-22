@@ -1,10 +1,12 @@
-<form class="form" *ngIf="!username">
+<!-- // why is component named username? here is whole game=)) -->
+<form class="form" *ngIf="!username"> 
   <label> Your name:
     <input type="text" placeholder="Please, enter your name" #inputName>
   </label>
   <button (click)="getUserName(inputName.value)">Submit</button>
 </form>
 
+<!-- this is definitely not a button =) -->
 <app-button-click *ngIf="username" [username]="username"></app-button-click>
 
 
