@@ -1,0 +1,18 @@
+<table class="table-results">
+  <tr class="table-cell">
+    <th>Attempt, №</th>
+    <th>Selected timer, sec</th>
+    <th>Total clicks</th>
+    <th>Clicks per second</th>
+    <th>Date</th>
+    <th>Your rate</th>
+  </tr>
+  <tr *ngFor="let result of results; let idx = index">
+    <td> {{ idx+1 }} </td>
+    <td> {{ result.timer}} </td>
+    <td> {{ result.count}} </td>
+    <td> {{ result.ratio | number:'1.1-2'}} </td>
+    <td> {{ result.id | date:'dd.MM.yyyy'}} </td>
+    <td [style.background-color]="result.ratio < 2 ?'#800080':'#00A287'"> {{ result.rate }} </td>
+  </tr>
+</table>

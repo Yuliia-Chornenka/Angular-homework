@@ -1,0 +1,26 @@
+<app-btn-show-all-results></app-btn-show-all-results>
+<app-btn-save-delete-account [username]="username"></app-btn-save-delete-account>
+<app-usergreeting [username]="username" *ngIf="!count"></app-usergreeting>
+<app-timer (timerGo)="onTimer($event)" *ngIf="!count"></app-timer>
+
+<div class="button-container" *ngIf="timerGo else userResults">
+  <p class="text"> Total clicks: <span class="count"> {{ count }} </span> </p>
+  <button class="btn-click" (click)="increase()" [class.btn-click-active]="count">Click me</button>
+  <p class="text"> Time to end: <span class="timer"> 00:00:{{ timerGo | number: '2.0' }} </span></p>
+</div>
+
+<ng-template #userResults>
+  <p class="result"> {{ username | uppercase }}, you can see your results in the table:</p>
+
+  <app-results-table [results]="results"></app-results-table>
+
+  <div class="btn-results-wrapper">
+    <button class="btn-results" (click)="tryAgain()">Try again</button>
+    <button class="btn-results" *ngIf="userExist" (click)="setResultsLocalStorage()">Save results</button>
+  </div>
+</ng-template>
+
+
+
+
+

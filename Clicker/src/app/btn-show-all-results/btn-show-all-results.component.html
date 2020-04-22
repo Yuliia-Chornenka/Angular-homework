@@ -1,0 +1,18 @@
+<button (click)="modalWindow.showModal(); showAllResults()" class="btn">Show all saved results</button>
+
+<dialog #modalWindow>
+  <div *ngIf="savedResultExist else noResults">
+    <div>
+      <h2 class="modal-title">All your saved results:</h2>
+      <span class="close-btn" (click)="modalWindow.close()">✖</span>
+    </div>
+    <app-results-table [results]="results"></app-results-table>
+  </div>
+</dialog>
+
+<ng-template #noResults>
+  <div>
+    <p class="modal-title">You don't have saved results</p>
+    <span class="close-btn" (click)="modalWindow.close()">✖</span>
+  </div>
+</ng-template>
