@@ -1,10 +1,12 @@
+@import '../styles/variables';
+
 .timer {
   text-align: center;
   font-size: 20px;
   &__seconds {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #00A287;
+    background-color: $main-color;
     color: white;
     margin: 10px;
     font-weight: bold;

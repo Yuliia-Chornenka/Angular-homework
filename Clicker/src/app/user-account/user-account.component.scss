@@ -1,25 +1,38 @@
+@import '../styles/variables';
+
 .btn {
-  background-color: #00A287;
+  background-color: $main-color;
   color: white;
   font-weight: bold;
   padding: 6px 16px;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  border: none;
+  border: 2px solid $main-color;
   font-size: 20px;
+
+  &:hover {
+    background-color: transparent;
+    color: $main-color;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__show-results {
     font-size: 21px;
     text-decoration: none;
-    position: absolute;
-    left: 9%;
-    top: 50px;
   }
   &__delete-account {
-    position: absolute;
-    right: 9%;
-    top: 50px;
-    background-color: #800080;
+    border: 2px solid $dark-danger-color;
+    background-color: $dark-danger-color;
+    &:hover {
+      color: $dark-danger-color;
+    }
   }
 }
 
@@ -27,6 +40,7 @@
   &__greeting {
     font-size: 20px;
     text-align: center;
+    margin-top: -33px;
   }
 }
 
@@ -34,7 +48,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 30px;
+  padding: 20px 30px;
 
   &__btn {
     height: 400px;
@@ -50,7 +64,7 @@
 
     &-active {
       animation: none;
-      background-color: #00A287;
+      background-color: $main-color;
       color: white;
     }
   }
@@ -65,12 +79,12 @@
   }
 
   &__count {
-    color: #00A287;
+    color: $main-color;
     font-size: 48px;
   }
 
   &__timer {
-    color: red;
+    color: $danger-color;
     font-size: 48px;
   }
 }
@@ -81,7 +95,7 @@
     text-align: center;
   }
   &__text--saved {
-    background-color: #00A287;
+    background-color: $main-color;
     color: white;
     padding: 2px;
   }

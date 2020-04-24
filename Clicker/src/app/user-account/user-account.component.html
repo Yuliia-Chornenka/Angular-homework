@@ -1,7 +1,9 @@
-<a routerLink="/results" class=" btn btn__show-results">Show all saved results</a>
-<a routerLink="/login">
-  <button class="btn btn__delete-account" (click)="removeUser()">Delete account</button>
-</a>
+<div class="btn__wrapper">
+  <a routerLink="/results" class=" btn btn__show-results">Show all saved results</a>
+  <a routerLink="/login">
+    <button class="btn btn__delete-account" (click)="removeUser()">Delete account</button>
+  </a>
+</div>
 <p *ngIf="!count" class="user__greeting">Hello, {{ username | uppercase }}. Now you can start a game.</p>
 
 <app-timer (timerGo)="onTimer($event)" *ngIf="!count"></app-timer>
@@ -18,7 +20,8 @@
 
   <div class="result__text" *ngIf="!results.length">
     <p>{{ username | uppercase }}, your results have been successfully saved.</p>
-    <p>To see all your saved results press the button <span class="result__text--saved">"Show all saved results"</span>.</p>
+    <p>To see all your saved results press the button <span class="result__text--saved">"Show all saved results"</span>.
+    </p>
   </div>
 
   <div class="result__btn-wrapper">
