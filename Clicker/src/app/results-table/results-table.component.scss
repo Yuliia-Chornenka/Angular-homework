@@ -1,0 +1,24 @@
+.table-results {
+  border: 2px solid #00A287;
+  background-color: rgb(250, 250, 250);
+  border-collapse: collapse;
+  text-align: center;
+  margin: 30px auto;
+  & td, th {
+    padding: 8px 15px;
+    border: 2px solid #00A287;
+    font-size: 18px;
+  }
+
+  & td:last-of-type {
+    color: white;
+  }
+}
+
+.no-results {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+  color: red;
+}

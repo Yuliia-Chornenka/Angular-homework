@@ -1,0 +1,30 @@
+<a routerLink="/results" class=" btn btn__show-results">Show all saved results</a>
+<a routerLink="/login">
+  <button class="btn btn__delete-account" (click)="removeUser()">Delete account</button>
+</a>
+<p *ngIf="!count" class="user__greeting">Hello, {{ username | uppercase }}. Now you can start a game.</p>
+
+<app-timer (timerGo)="onTimer($event)" *ngIf="!count"></app-timer>
+
+<div class="game" *ngIf="timerGo else userResults">
+  <p class="game__text"> Total clicks: <span class="game__count"> {{ count }} </span></p>
+  <button class="game__btn" (click)="increase()" [class.game__btn-active]="count">Click me</button>
+  <p class="game__text"> Time to end: <span class="game__timer"> 00:00:{{ timerGo | number: '2.0' }} </span></p>
+</div>
+
+<ng-template #userResults>
+  <p class="result__text" *ngIf="results.length"> {{ username | uppercase }}, you can see your results in the table:</p>
+  <app-results-table *ngIf="results.length" [results]="results"></app-results-table>
+
+  <div class="result__text" *ngIf="!results.length">
+    <p>{{ username | uppercase }}, your results have been successfully saved.</p>
+    <p>To see all your saved results press the button <span class="result__text--saved">"Show all saved results"</span>.</p>
+  </div>
+
+  <div class="result__btn-wrapper">
+    <button class="btn" (click)="restartGame()">Try again</button>
+    <button class="btn" *ngIf="results.length"
+            (click)="saveUserResults()">Save results
+    </button>
+  </div>
+</ng-template>

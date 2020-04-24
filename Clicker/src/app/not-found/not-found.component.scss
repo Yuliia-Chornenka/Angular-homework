@@ -1,0 +1,35 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+
+  &__description {
+    font-size: 26px;
+    font-weight: bold;
+
+    &-wrapper {
+      text-align: center;
+    }
+  }
+
+  &__button-back {
+    cursor: pointer;
+    margin: 20px auto 0 auto;
+    height: 50px;
+    width: 150px;
+    outline: none;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    background: #00A287;
+  }
+
+  &__img {
+    width: 450px;
+  }
+}

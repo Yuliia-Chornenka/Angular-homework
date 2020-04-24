@@ -1,5 +1,0 @@
-<button class="btn" (click)="setLocalStorage()" *ngIf="!userExist else btnDelete">Save account</button>
-
-<ng-template #btnDelete>
-  <button class="btn btn-delete" (click)="deleteLocalStorage()">Delete account</button>
-</ng-template>
