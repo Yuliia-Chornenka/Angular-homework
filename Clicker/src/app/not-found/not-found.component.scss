@@ -1,3 +1,5 @@
+@import '../styles/variables';
+
 .not-found {
   display: flex;
   justify-content: center;
@@ -25,8 +27,14 @@
     color: white;
     font-weight: bold;
     letter-spacing: 2px;
-    border: none;
-    background: #00A287;
+    border: 2px solid $main-color;
+    background: $main-color;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: transparent;
+      color: $main-color;
+    }
   }
 
   &__img {

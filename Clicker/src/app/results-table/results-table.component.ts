@@ -15,7 +15,8 @@ export class ResultsTableComponent implements OnInit {
 
   resultsExist = true;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit(): void {
     this.getUserResults();
@@ -24,8 +25,10 @@ export class ResultsTableComponent implements OnInit {
   getUserResults(): void {
     if (!this.results) {
       this.dataService.getUserResults()
-        .subscribe(results => this.results = results);
-      this.resultsExist = !!this.results;
+        .subscribe(results => {
+          this.results = results;
+          this.resultsExist = !!this.results;
+        });
     }
   }
 }
