@@ -1,0 +1,106 @@
+.btn {
+  background-color: #00A287;
+  color: white;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  &__show-results {
+    font-size: 21px;
+    text-decoration: none;
+    position: absolute;
+    left: 9%;
+    top: 50px;
+  }
+  &__delete-account {
+    position: absolute;
+    right: 9%;
+    top: 50px;
+    background-color: #800080;
+  }
+}
+
+.user {
+  &__greeting {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.game {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+
+  &__btn {
+    height: 400px;
+    width: 400px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 62px;
+    box-shadow: 0 3px 6px 3px #dcdcdc;
+    background-color: lightgrey;
+    animation: pulsing 2s infinite;
+
+    &-active {
+      animation: none;
+      background-color: #00A287;
+      color: white;
+    }
+  }
+
+  &__text {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__count {
+    color: #00A287;
+    font-size: 48px;
+  }
+
+  &__timer {
+    color: red;
+    font-size: 48px;
+  }
+}
+
+.result {
+  &__text {
+    font-size: 20px;
+    text-align: center;
+  }
+  &__text--saved {
+    background-color: #00A287;
+    color: white;
+    padding: 2px;
+  }
+  &__btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 30%;
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(1.0, 1.0);
+  }
+  50% {
+    transform: scale(0.95, 0.95);
+  }
+  100% {
+    transform: scale(1.0, 1.0);
+  }
+}

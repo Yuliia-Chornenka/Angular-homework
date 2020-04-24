@@ -1,0 +1,33 @@
+.login {
+  text-align: center;
+  &__label {
+    font-size: 18px;
+  }
+  &__input {
+    padding: 2px;
+    font-size: 16px;
+  }
+  &__btn {
+    padding: 6px 16px;
+    border-radius: 5px;
+    background-color: #00A287;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin-left: 15px;
+  }
+}
+
+.user-exist {
+  text-align: center;
+  font-size: 24px;
+  color: red;
+  &__link {
+    display: block;
+    text-align: center;
+    font-size: 22px;
+  }
+}

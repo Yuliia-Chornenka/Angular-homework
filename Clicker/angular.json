@@ -8,6 +8,11 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "prefix": "app",
       "architect": {
         "build": {
@@ -24,7 +29,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -88,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

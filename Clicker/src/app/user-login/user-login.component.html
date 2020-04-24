@@ -1,0 +1,16 @@
+<div class="login" *ngIf="!username else userExist">
+  <label class="login__label"> Your name:
+    <input class="login__input" type="text" placeholder="Please, enter your name" #inputName>
+  </label>
+
+  <a routerLink="/account">
+    <button class="login__btn" (click)="getUserName(inputName.value)">Submit</button>
+  </a>
+</div>
+
+<ng-template #userExist>
+  <p class="user-exist">You are already registered. If you want to create a new account, first delete the existing one.</p>
+  <a routerLink="/account" class="user-exist__link"> Go to account </a>
+</ng-template>
+
+
